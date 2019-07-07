@@ -25,12 +25,14 @@ window.onload = function () {
     }
 
     function initiateAudio(data) {
+        console.log('init audio with', data)
         if(app.audio){
             app.audio.remove();
             window.cancelAnimationFrame(app.animationFrame);
         }
         app.audio = document.createElement('audio'); // creates an html audio element
-        app.audio.src = URL.createObjectURL(data); // sets the audio source to the dropped file
+        // app.audio.src = URL.createObjectURL(data); // sets the audio source to the dropped file
+        app.audio.src = './track.mp3' // sets the audio source to the dropped file
         app.audio.autoplay = true;
         // app.audio.play();
         app.play = true;
@@ -42,5 +44,7 @@ window.onload = function () {
         source.connect(analyser); // connects the analyser node to the audioNode and the audioDestinationNode
         app.animate();
     }
+
+    initiateAudio();
 };
 

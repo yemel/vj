@@ -4,6 +4,7 @@ public/media/*
 
 node_modules
 jspm_packages
+package-lock.json
 
 public/scripts/app.js
 public/scripts/plane.js
